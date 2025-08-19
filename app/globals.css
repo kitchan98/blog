@@ -441,6 +441,115 @@ body {
   animation: fadeIn 0.5s ease-out;
 }
 
+/* Footer Styles */
+.footer-section {
+  margin-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  background: linear-gradient(to bottom, transparent, var(--gray-light));
+}
+
+.footer-content {
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.footer-profile {
+  margin-bottom: 2rem;
+}
+
+.footer-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-name::after {
+  content: '';
+  position: absolute;
+  bottom: -0.2em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.footer-location {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-detail {
+  transition: color 0.2s ease;
+}
+
+.footer-separator {
+  color: #d1d5db;
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 100px;
+  color: var(--gray-medium);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.1);
+}
+
+.social-label {
+  letter-spacing: 0.025em;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 640px) {
   .px-6 {
@@ -454,5 +563,28 @@ body {
   
   .blog-card:hover {
     padding-left: 0;
+  }
+
+  .footer-location {
+    font-size: 0.8rem;
+  }
+
+  .footer-separator {
+    display: none;
+  }
+
+  .footer-detail {
+    width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    width: 200px;
+    justify-content: center;
   }
 }

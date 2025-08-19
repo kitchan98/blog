@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Personal Blog
+
+This is a personal blog built with [Next.js](https://nextjs.org), designed to share thoughts, articles, and insights. It's structured to be easy to update and maintain, focusing on content delivery.
+
+## Features
+
+-   **MDX Support**: Write your blog posts using Markdown with JSX components for rich, interactive content.
+-   **Content Management**: Posts are managed as `.mdx` files in the `content/posts` directory, parsed using `gray-matter` for metadata (title, date, preview).
+-   **Date Formatting**: Utilizes `date-fns` for consistent and flexible date display.
+-   **Styling**: Styled with [Tailwind CSS](https://tailwindcss.com/) for a modern and responsive design.
+-   **Automatic Reading Time**: Each post automatically calculates and displays an estimated reading time.
+
+## Adding New Posts
+
+To add a new blog post:
+1.  Create a new `.mdx` file inside the `content/posts` directory (e.g., `my-new-post.mdx`).
+2.  Add frontmatter at the top of the file for metadata, like this:
+
+    ```markdown
+    ---
+    title: "My New Awesome Post"
+    date: "2025-08-19"
+    preview: "A short preview of my new post."
+    ---
+    ```
+3.  Write your post content below the frontmatter using Markdown and JSX.
 
 ## Getting Started
 
@@ -24,8 +49,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
