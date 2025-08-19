@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold mb-2">My Blog</h1>
-          <p className="text-gray-600">Thoughts and ideas worth sharing</p>
+        <header className="site-header">
+          <h1 className="text-4xl font-bold mb-2 site-title">My Blog</h1>
+          <p className="tagline">Thoughts and ideas worth sharing</p>
         </header>
         
-        <main>
+        <main className="fade-in">
           <BlogList posts={posts} />
         </main>
       </div>

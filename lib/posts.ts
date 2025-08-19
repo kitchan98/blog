@@ -11,10 +11,18 @@ export interface PostMeta {
   date: string;
   preview: string;
   formattedDate?: string;
+  readingTime?: string;
 }
 
 export interface Post extends PostMeta {
   content: string;
+}
+
+function calculateReadingTime(content: string): string {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -29,7 +37,7 @@ export function getAllPosts(): PostMeta[] {
       const slug = fileName.replace(/\.mdx$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
+      const { data, content } = matter(fileContents);
 
       return {
         slug,
@@ -37,6 +45,7 @@ export function getAllPosts(): PostMeta[] {
         date: data.date || new Date().toISOString(),
         preview: data.preview || '',
         formattedDate: format(new Date(data.date || new Date()), 'MMMM d, yyyy'),
+        readingTime: calculateReadingTime(content),
       };
     });
 
@@ -62,6 +71,7 @@ export function getPostBySlug(slug: string): Post | null {
       preview: data.preview || '',
       content,
       formattedDate: format(new Date(data.date || new Date()), 'MMMM d, yyyy'),
+      readingTime: calculateReadingTime(content),
     };
   } catch {
     return null;
